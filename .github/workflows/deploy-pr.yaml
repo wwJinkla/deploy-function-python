@@ -22,14 +22,14 @@ jobs:
       - name: Test code
         env:
           COGNITE_API_KEY: ${{ secrets.COGNITE_API_KEY }}
-          COGNITE_PROJECT: datastudio
+          COGNITE_PROJECT: wei-dev
           COGNITE_BASE_URL: https://greenfield.cognitedata.com
           COGNITE_CLIENT_NAME: cognite-function-deploy
         run: pytest ${{ matrix.functions }} -m "unit"
       - name: Deploy
         uses: ./
         with:
-          cdf_project: datastudio
+          cdf_project: wei-dev
           cdf_base_url: https://greenfield.cognitedata.com
           cdf_deployment_credentials: ${{ secrets.COGNITE_API_KEY }}
           cdf_function_credentials: ${{ secrets.COGNITE_API_KEY }}
@@ -37,7 +37,7 @@ jobs:
       - name: Run integration tests
         env:
           COGNITE_API_KEY: ${{ secrets.COGNITE_API_KEY }}
-          COGNITE_PROJECT: datastudio
+          COGNITE_PROJECT: wei-dev
           COGNITE_BASE_URL: https://greenfield.cognitedata.com
           COGNITE_CLIENT_NAME: cognite-function-deploy
         run: pytest ${{ matrix.functions }} -m "integration"

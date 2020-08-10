@@ -7,7 +7,7 @@ def handle(data, client):
     print("Here it is.")
     time.sleep(1.0)
     print("Ok, I'm done now. Fetching an asset")
-    asset = client.assets.retrieve(external_id = "my_special_asset")
+    asset = client.assets.retrieve(id = 8091887440135311)
     return {
         "result": 2.0 * data["value"],
         "assetName": asset.name,
