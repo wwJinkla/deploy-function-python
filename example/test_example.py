@@ -29,7 +29,7 @@ def test_deployed_function(data, client):
   function = client.functions.retrieve(external_id=external_id)
   call = function.call(data=data)
   assert call.status == "Completed"
-  assert call.response["result"] == 2.0 * data["value"]
+  assert call.get_response["result"] == 2.0 * data["value"]
 
 @pytest.mark.unit
 def test_handler(data, client):
