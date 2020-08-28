@@ -9,6 +9,6 @@ def handle(data, client):
     print("Ok, I'm done now. Fetching an asset")
     asset = client.assets.retrieve(id = 8091887440135311)
     return {
-        "result": 2.0 * data["value"],
+        "result": 3.0 * data["value"],
         "assetName": asset.name,
     }
